@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sidekickpdfexporter"
+version = "0.1.0"
+description = "Alat CLI untuk mengunduh dokumen College Sidekick sebagai PDF."
+authors = [
+    "Rozhak <65714340+RozhakDev@users.noreply.github.com>"
+]
+readme = "README.md"
+packages = [{include = "sidekickpdfexporter", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+selenium = "^4.18.1"
+typer = {extras = ["rich"], version = "^0.9.0"}
+webdriver-manager = "^4.0.1"
+
+[tool.poetry.scripts]
+sidekick-pdf-exporter = "sidekickpdfexporter.cli:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
